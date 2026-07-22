@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コードが書けないあなたが、3日後、自分のLPを公開している。｜LPが作れる3日間講座</title>
+<meta name="description" content="デザイン経験ゼロ・プログラミング知識ゼロでOK。Zoom少人数制の3日間で、自分のLPを公開し終わる実践講座。7月21日スタート。">
+<meta property="og:title" content="コードが書けないあなたが、3日後、自分のLPを公開している。">
+<meta property="og:description" content="デザイン経験ゼロ・プログラミング知識ゼロでOK。Zoom少人数制の3日間で、自分のLPを“公開し終わる”実践講座。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="hero-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫑</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0a1024;
+    --navy2:#101832;
+    --gold:#d8b45c;
+    --gold-soft:#e8cf8e;
+    --gold-deep:#a8863a;
+    --green:#5bbf4a;
+    --ink:#f2efe6;
+    --muted:#a5a89f;
+    --line:rgba(216,180,92,.25);
+    --card:rgba(255,255,255,.035);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans JP",sans-serif;
+    background:var(--navy);
+    color:var(--ink);
+    line-height:1.9;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:"Noto Serif JP",serif}
+  .gold{color:var(--gold-soft)}
+  .gold-grad{
+    background:linear-gradient(180deg,#f2dfa6 0%,#d8b45c 55%,#b6944a 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+  }
+
+  /* ===== 背景（AIを連想する回路の光・ひかえめ） ===== */
+  .bg{
+    position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(1000px 600px at 85% 10%, rgba(216,180,92,.08), transparent 60%),
+      radial-gradient(800px 500px at 8% 90%, rgba(91,191,74,.05), transparent 60%),
+      linear-gradient(180deg,#0a1024 0%,#0d142c 50%,#0a1024 100%);
+  }
+  .circuit{
+    position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23d8b45c' stroke-opacity='0.07' stroke-width='1'%3E%3Cpath d='M20 60 H160 V180 H300'/%3E%3Cpath d='M380 340 H260 V240 H120'/%3E%3Cpath d='M60 400 V300 H180'/%3E%3C/g%3E%3Cg fill='%23d8b45c' fill-opacity='0.12'%3E%3Ccircle cx='160' cy='60' r='2.5'/%3E%3Ccircle cx='300' cy='180' r='2.5'/%3E%3Ccircle cx='120' cy='240' r='2.5'/%3E%3Ccircle cx='60' cy='300' r='2.5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* ===== ヘッダー ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px clamp(16px,4vw,40px);
+    background:rgba(10,16,36,.6);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(216,180,92,.15);
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:clamp(14px,2.4vw,18px)}
+  .brand img{width:34px;height:34px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-weight:700;text-decoration:none;cursor:pointer;border:none;border-radius:999px;
+    white-space:nowrap;transition:transform .18s,box-shadow .25s,filter .2s;
+    font-family:"Noto Sans JP",sans-serif;
+  }
+  .btn-gold{
+    color:#241a06;
+    background:linear-gradient(135deg,#efd996,#d8b45c 50%,#bd9440);
+    box-shadow:0 6px 18px rgba(216,180,92,.28),inset 0 1px 0 rgba(255,255,255,.45);
+  }
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(216,180,92,.42);filter:brightness(1.04)}
+  .header-btn{padding:9px 18px;font-size:13px}
+
+  /* ===== ヒーロー ===== */
+  .hero{
+    position:relative;min-height:100svh;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;padding:110px clamp(18px,5vw,40px) 84px;
+    overflow:hidden;
+  }
+  .hero-video{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
+  }
+  .hero-overlay{
+    position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg,rgba(10,16,36,.72) 0%,rgba(10,16,36,.55) 45%,rgba(10,16,36,.88) 100%);
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 20px;margin-bottom:24px;border-radius:999px;
+    font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--gold-soft);
+    border:1px solid var(--line);background:rgba(216,180,92,.06);
+  }
+  .hero h1{
+    font-size:clamp(27px,6.4vw,58px);font-weight:900;line-height:1.5;
+    letter-spacing:.02em;text-shadow:0 4px 26px rgba(0,0,0,.55);
+  }
+  .hero-sub{
+    max-width:600px;margin:24px auto 0;color:#dcd9cd;
+    font-size:clamp(14px,2.4vw,17px);line-height:2;
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px;
+  }
+  .meta-chip{
+    padding:8px 18px;border-radius:999px;font-size:12.5px;font-weight:700;color:#e9ddb8;
+    border:1px solid var(--line);background:rgba(10,16,36,.5);
+  }
+  .hero .cta-row{margin-top:32px}
+  .hero-cta{padding:17px 40px;font-size:clamp(15px,2.8vw,18px)}
+  .cta-micro{margin-top:12px;font-size:12px;color:var(--muted)}
+  .scroll-hint{
+    position:absolute;bottom:22px;left:50%;transform:translateX(-50%);
+    font-size:10px;letter-spacing:.22em;color:var(--muted);
+  }
+  .scroll-hint::before{
+    content:"";display:block;width:1px;height:30px;margin:0 auto 8px;
+    background:linear-gradient(var(--gold),transparent);animation:drop 1.8s infinite;
+  }
+  @keyframes drop{0%{opacity:0;transform:scaleY(.2);transform-origin:top}50%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:top}}
+
+  /* ===== セクション共通 ===== */
+  section{position:relative;padding:clamp(66px,10vw,110px) clamp(18px,5vw,40px)}
+  .wrap{max-width:920px;margin:0 auto}
+  .eyebrow{text-align:center;font-size:11.5px;font-weight:700;letter-spacing:.24em;color:var(--gold);margin-bottom:14px}
+  .sec-title{text-align:center;font-size:clamp(23px,4.8vw,36px);font-weight:900;line-height:1.5;margin-bottom:14px}
+  .sec-lead{text-align:center;color:var(--muted);font-size:clamp(13.5px,2.2vw,15.5px);margin-bottom:44px}
+
+  /* ===== 共感 ===== */
+  .worries{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .worry{
+    display:flex;align-items:flex-start;gap:14px;
+    padding:18px 22px;border-radius:14px;
+    background:var(--card);border:1px solid rgba(255,255,255,.07);
+    font-size:clamp(14.5px,2.4vw,16.5px);font-weight:500;
+  }
+  .worry .check{
+    flex-shrink:0;width:26px;height:26px;border-radius:50%;
+    display:grid;place-items:center;font-size:13px;font-weight:900;color:#241a06;
+    background:linear-gradient(135deg,#efd996,#d8b45c);margin-top:2px;
+  }
+  .empathy-close{
+    display:flex;align-items:center;justify-content:center;gap:18px;
+    margin-top:52px;flex-wrap:wrap;
+  }
+  .empathy-close img{width:clamp(90px,16vw,130px);height:auto;animation:float 4.5s ease-in-out infinite}
+  .empathy-close p{
+    font-size:clamp(19px,3.6vw,28px);font-weight:900;line-height:1.7;text-align:center;
+  }
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  /* ===== 講座内容 ===== */
+  .days{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:44px}
+  .day{
+    position:relative;padding:30px 22px 26px;border-radius:16px;
+    background:linear-gradient(180deg,rgba(216,180,92,.06),rgba(255,255,255,.015));
+    border:1px solid var(--line);
+  }
+  .day .tag{
+    display:inline-block;padding:4px 14px;border-radius:999px;margin-bottom:14px;
+    font-size:11.5px;font-weight:900;letter-spacing:.12em;color:#241a06;
+    background:linear-gradient(135deg,#efd996,#d8b45c);
+  }
+  .day h3{font-size:clamp(15.5px,2.4vw,17.5px);font-weight:700;line-height:1.6;margin-bottom:8px}
+  .day p{font-size:13px;color:var(--muted);line-height:1.9}
+  .get{
+    max-width:680px;margin:0 auto;padding:30px clamp(20px,4vw,36px);
+    border-radius:18px;border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(216,180,92,.07),rgba(255,255,255,.02));
+  }
+  .get h3{text-align:center;font-size:clamp(16px,2.8vw,19px);font-weight:900;margin-bottom:18px}
+  .get ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .get li{display:flex;gap:10px;font-size:clamp(13.5px,2.3vw,15.5px)}
+  .get li::before{content:"✦";color:var(--gold);flex-shrink:0}
+  .price-row{
+    display:flex;align-items:baseline;justify-content:center;gap:12px;flex-wrap:wrap;
+    margin-top:22px;padding-top:20px;border-top:1px dashed var(--line);
+  }
+  .price-row .was{font-size:13px;color:var(--muted)}
+  .price-row .now{font-size:clamp(26px,5vw,36px);font-weight:900}
+  .price-row .now small{font-size:.5em;font-weight:700}
+  .mid-cta{text-align:center;margin-top:40px}
+  .mid-cta .btn{padding:16px 38px;font-size:clamp(14.5px,2.6vw,17px)}
+
+  /* ===== 強み ===== */
+  .strengths{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .strength{
+    padding:32px 24px;border-radius:16px;text-align:center;
+    background:var(--card);border:1px solid rgba(255,255,255,.08);
+  }
+  .strength .num{font-family:"Noto Serif JP",serif;font-size:36px;font-weight:900;margin-bottom:12px}
+  .strength h3{font-size:clamp(15px,2.4vw,17px);font-weight:700;line-height:1.7;margin-bottom:8px}
+  .strength p{font-size:13px;color:var(--muted);line-height:1.9}
+
+  /* ===== 相棒たちの画像（生成予定） ===== */
+  .duo{text-align:center;margin-top:48px}
+  .duo img{
+    max-width:min(520px,86%);border-radius:18px;border:1px solid var(--line);
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+  }
+  .duo figcaption{margin-top:12px;font-size:12px;color:var(--muted)}
+
+  /* ===== プロフィール ===== */
+  .profile{
+    max-width:760px;margin:0 auto;display:flex;gap:clamp(20px,4vw,36px);align-items:center;
+    padding:clamp(28px,5vw,44px);border-radius:20px;
+    background:linear-gradient(180deg,rgba(216,180,92,.06),rgba(255,255,255,.02));
+    border:1px solid var(--line);
+  }
+  .profile img{width:clamp(110px,20vw,160px);height:auto;flex-shrink:0;animation:float 5s ease-in-out infinite}
+  .profile .name{font-size:clamp(18px,3.2vw,22px);font-weight:900;margin-bottom:4px}
+  .profile .role{font-size:12.5px;color:var(--gold-soft);font-weight:700;letter-spacing:.06em;margin-bottom:14px}
+  .profile p{font-size:clamp(13.5px,2.3vw,15px);line-height:2}
+  .profile .strong{color:var(--gold-soft);font-weight:700}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .faq details{
+    border-radius:14px;border:1px solid rgba(255,255,255,.09);
+    background:var(--card);overflow:hidden;
+  }
+  .faq summary{
+    list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;
+    padding:18px 22px;font-weight:700;font-size:clamp(14px,2.4vw,16px);
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .q{color:var(--gold);font-weight:900;flex-shrink:0}
+  .faq .a{
+    padding:0 22px 20px 50px;font-size:clamp(13.5px,2.3vw,15px);color:#d6d3c6;line-height:2;
+  }
+  .faq .a b{color:var(--gold-soft)}
+
+  /* ===== 最終CTA ===== */
+  .cta-final{text-align:center}
+  .cta-card{
+    max-width:700px;margin:0 auto;padding:clamp(40px,7vw,60px) clamp(22px,5vw,50px);
+    border-radius:24px;position:relative;
+    background:
+      radial-gradient(560px 280px at 50% -10%,rgba(216,180,92,.15),transparent 70%),
+      linear-gradient(180deg,rgba(18,26,52,.92),rgba(10,16,36,.92));
+    border:1px solid var(--line);
+    box-shadow:0 30px 70px rgba(0,0,0,.5);
+  }
+  .cta-card h2{font-size:clamp(21px,4.4vw,32px);font-weight:900;line-height:1.6;margin-bottom:20px}
+  .urgency{
+    display:flex;flex-direction:column;gap:8px;max-width:440px;margin:0 auto 30px;text-align:left;
+  }
+  .urgency li{display:flex;gap:10px;font-size:clamp(13.5px,2.3vw,15px);list-style:none}
+  .urgency li::before{content:"⏳";flex-shrink:0}
+  .cta-chars{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
+  .cta-chars img{width:clamp(64px,12vw,90px);height:auto;animation:float 4s ease-in-out infinite}
+  .cta-chars img:last-child{animation-delay:.6s}
+  .cta-big{padding:19px 46px;font-size:clamp(16px,3vw,19px)}
+  .cta-note{margin-top:16px;font-size:12px;color:var(--muted)}
+
+  /* ===== フッター ===== */
+  footer{text-align:center;padding:52px 20px 40px;border-top:1px solid rgba(216,180,92,.14)}
+  .foot-brand{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:17px;margin-bottom:20px}
+  .foot-brand img{width:30px;height:30px;object-fit:contain}
+  .socials{display:flex;justify-content:center;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+  .social{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    padding:10px 22px;border-radius:999px;font-size:13px;font-weight:700;color:#e9ddb8;
+    border:1px solid var(--line);background:rgba(216,180,92,.05);
+    transition:transform .18s,background .25s;
+  }
+  .social:hover{transform:translateY(-2px);background:rgba(216,180,92,.13)}
+  .copyright{font-size:12px;color:var(--muted);letter-spacing:.04em}
+
+  /* ===== 演出（ひかえめ・2種のみ：reveal / float） ===== */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.show{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}
+
+  /* ===== レスポンシブ ===== */
+  @media(max-width:760px){
+    .days,.strengths{grid-template-columns:1fr}
+    .profile{flex-direction:column;text-align:center}
+    .profile p{text-align:left}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="circuit"></div>
+
+<!-- ===== ヘッダー ===== -->
+<header>
+  <div class="brand">
+    <img src="peaman.png" alt="ぴーまん野郎" onerror="this.style.display='none'">
+    <span>ぴーまん野郎</span>
+  </div>
+  <a class="btn btn-gold header-btn" href="https://note.com/pman1212/n/n16e9139f0436" target="_blank" rel="noopener">記事を見る</a>
+</header>
+
+<!-- ===== ヒーロー ===== -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="hero-poster.jpg" id="heroVideo">
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <span class="hero-badge">Zoom開催 ｜ 3日間 ｜ 少人数制</span>
+
+  <h1 class="serif">
+    コードが書けないあなたが、<br>
+    <span class="gold-grad">3日後、自分のLPを公開している。</span>
+  </h1>
+
+  <p class="hero-sub">
+    デザイン経験ゼロ。プログラミング知識ゼロ。それでも大丈夫。<br>
+    必要なのは、あなたの商品への<b class="gold">「想い」</b>だけ。
+  </p>
+
+  <div class="hero-meta">
+    <span class="meta-chip">📅 7月21日・22日・23日</span>
+    <span class="meta-chip">🕙 各日 22:00〜</span>
+    <span class="meta-chip">💻 顔出しなしでOK</span>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-gold hero-cta" href="https://note.com/pman1212/n/n16e9139f0436" target="_blank" rel="noopener">📖 講座の詳細をnoteで見る</a>
+  </div>
+  <p class="cta-micro">※ 記事の購入が、講座への参加チケットになります</p>
+
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ===== 共感 ===== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow reveal">CHECK</p>
+    <h2 class="sec-title reveal">こんな気持ち、<span class="gold-grad">ありませんか？</span></h2>
+    <p class="sec-lead reveal">ひとつでも当てはまったら、この先を読んでみてください。</p>
+
+    <div class="worries">
+      <div class="worry reveal"><span class="check">✓</span>周りのLPを作っている人が、正直うらやましい</div>
+      <div class="worry reveal d1"><span class="check">✓</span>私も、かわいいLPを作ってみたい</div>
+      <div class="worry reveal d2"><span class="check">✓</span>商品はあるのに、認知が広がらない</div>
+      <div class="worry reveal d1"><span class="check">✓</span>でも、本当に難しそうだから触りたくもない…</div>
+    </div>
+
+    <div class="empathy-close reveal">
+      <img src="peaman.png" alt="ぴーまん野郎" onerror="this.style.display='none'">
+      <p class="serif">その"難しそう"、<br><span class="gold-grad">僕が簡単にします。</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 講座内容 ===== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow reveal">PROGRAM</p>
+    <h2 class="sec-title reveal">3日間で、<span class="gold-grad">ここまで行きます</span></h2>
+    <p class="sec-lead reveal">「作れるようになる」ではなく、「公開し終わっている」講座です。</p>
+
+    <div class="days">
+      <div class="day reveal">
+        <span class="tag">DAY 1</span>
+        <h3>LPの「設計図」を作る</h3>
+        <p>手を動かす前に、思考から。あなたの商品の「売れる一本道」を、Zoomでその場で文章の設計図に落とします。「あとでやろう」ができない仕組みです。</p>
+      </div>
+      <div class="day reveal d1">
+        <span class="tag">DAY 2</span>
+        <h3>AIで形にして、公開まで</h3>
+        <p>設計図をAIに渡してLPの形に。コードは書きません。あなたがやるのは指示と判断だけ。<b>2日目の終わり、あなたのスマホに自分のLPのURLが表示されています。</b></p>
+      </div>
+      <div class="day reveal d2">
+        <span class="tag">DAY 3</span>
+        <h3>Claude Codeの可能性を、もっと</h3>
+        <p>公開して終わりじゃない。LPのその先——AIで何ができるのか、Claude Codeの可能性をたっぷり体感してもらう1日です。</p>
+      </div>
+    </div>
+
+    <div class="get reveal">
+      <h3>あなたが手に入れるもの</h3>
+      <ul>
+        <li>LPが作れる3日間講座（Zoom・少人数制）への参加権</li>
+        <li>2日目の終わりには「自分のLPが公開済み」の状態</li>
+        <li>24時間働き続ける、あなた専属の"営業マン"（＝LP）</li>
+        <li>「自分にもできた」という、何よりの自信</li>
+      </ul>
+      <div class="price-row">
+        <span class="was">LPを外注すると数十万円のところ</span>
+        <span class="now gold-grad">30,000<small>円</small></span>
+      </div>
+    </div>
+
+    <div class="mid-cta reveal">
+      <a class="btn btn-gold" href="https://note.com/pman1212/n/n16e9139f0436" target="_blank" rel="noopener">📖 記事を読んで参加する</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 強み ===== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow reveal">REASON</p>
+    <h2 class="sec-title reveal">初心者でも大丈夫な、<span class="gold-grad">3つの理由</span></h2>
+
+    <div class="strengths">
+      <div class="strength reveal">
+        <div class="num gold-grad serif">01</div>
+        <h3>コードは書かない</h3>
+        <p>作るのはAI。あなたがやるのは「指示」と「判断」だけ。プログラミング知識はいりません。</p>
+      </div>
+      <div class="strength reveal d1">
+        <div class="num gold-grad serif">02</div>
+        <h3>置いていかれない</h3>
+        <p>Zoomで画面を共有しながら、少人数で進みます。一人ひとりの画面を見ながらだから、迷子になりません。</p>
+      </div>
+      <div class="strength reveal d2">
+        <div class="num gold-grad serif">03</div>
+        <h3>「公開し終わる」講座</h3>
+        <p>ノウハウを聞いて終わり、ではありません。2日目にはあなたのURLが手元にあります。</p>
+      </div>
+    </div>
+
+    <figure class="duo reveal">
+      <img src="duo-pc.jpg" alt="ぴーまんとトマトが一緒にPCを触っている" onerror="this.parentElement.style.display='none'">
+      <figcaption>AIと一緒なら、むずかしくない。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== プロフィール ===== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow reveal">PROFILE</p>
+    <h2 class="sec-title reveal">講師について</h2>
+
+    <div class="profile reveal">
+      <img src="peaman.png" alt="ぴーまん野郎">
+      <div>
+        <p class="name">ぴーまん野郎 🫑</p>
+        <p class="role">Threads × note ｜「難しいを簡単に」</p>
+        <p>
+          正直に言うと、講義経験は多くありません。てこずる場面もあるかもしれません。<br>
+          だからこそ——<span class="strong">一人ひとりに、真摯に寄り添って進めます。</span><br>
+          そして、<span class="strong">AIのスキルには自信があります。</span><br>
+          あなたの「初めて」を、置いていきません。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow reveal">FAQ</p>
+    <h2 class="sec-title reveal">よくある質問</h2>
+    <p class="sec-lead reveal">申し込み前の「でも…」に、先にお答えします。</p>
+
+    <div class="faq">
+      <details class="reveal" open>
+        <summary><span class="q">Q.</span>本当に初心者でも大丈夫？AIもコードも触ったことがないんです…</summary>
+        <p class="a">大丈夫です。この講座では<b>コードを一切書きません</b>。作るのはAIで、あなたがやるのは「指示」と「判断」だけ。AIが初めてでも、画面を一緒に見ながら進めるので安心してください。</p>
+      </details>
+      <details class="reveal d1">
+        <summary><span class="q">Q.</span>30,000円って、高くないですか？</summary>
+        <p class="a">LP制作を外注すると、相場は<b>数十万円</b>です。この講座では、それを自分で作れるようになり、しかも講座中に<b>公開まで終わります</b>。さらに、一度身につけたスキルは2枚目・3枚目のLPにもずっと使えます。</p>
+      </details>
+      <details class="reveal d2">
+        <summary><span class="q">Q.</span>PCが苦手だけど、ついていける？</summary>
+        <p class="a">難しいセットアップは<b>画面共有で一緒にやります</b>。少人数制で一人ひとりの画面を確認しながら進めるので、「置いていかれた…」になりません。わからなくなったら、その場で聞けます。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 最終CTA ===== -->
+<section class="cta-final">
+  <div class="cta-card reveal">
+    <div class="cta-chars">
+      <img src="peaman.png" alt="ぴーまん野郎" onerror="this.style.display='none'">
+      <img src="tomato.png" alt="トマト" onerror="this.style.display='none'">
+    </div>
+    <h2 class="serif">「いつかやろう」を、<br><span class="gold-grad">今日で終わりにする。</span></h2>
+    <ul class="urgency">
+      <li>少人数制のため、席に限りがあります</li>
+      <li>7月21日スタート。日程という"締切"つきです</li>
+      <li>時代においていかれない。AIスキルは「いつか」ではなく、今</li>
+    </ul>
+    <a class="btn btn-gold cta-big" href="https://note.com/pman1212/n/n16e9139f0436" target="_blank" rel="noopener">📖 note記事を読んで申し込む</a>
+    <p class="cta-note">※ noteに移動します。記事の購入が参加チケットになります</p>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer>
+  <div class="foot-brand"><img src="peaman.png" alt="" onerror="this.style.display='none'">ぴーまん野郎</div>
+  <div class="socials">
+    <a class="social" href="https://note.com/pman1212" target="_blank" rel="noopener">📝 note</a>
+    <a class="social" href="https://www.threads.com/@pmen.1212" target="_blank" rel="noopener">🧵 Threads</a>
+    <a class="social" href="https://note.com/pman1212/n/n16e9139f0436" target="_blank" rel="noopener">📖 講座の記事を見る</a>
+  </div>
+  <p class="copyright">© 2026 ぴーまん野郎 All rights reserved.</p>
+</footer>
+
+<script>
+  // スクロールでふわっと表示（演出はこれとfloatの2種だけ）
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // 動画が読み込めない時は静かに非表示（背景グラデが代わりに見える）
+  const v = document.getElementById('heroVideo');
+  v.addEventListener('error', ()=>{ v.style.display='none'; }, true);
+  const src = v.querySelector('source');
+  if(src) src.addEventListener('error', ()=>{ v.style.display='none'; });
+</script>
+
+</body>
+</html>
