@@ -33,7 +33,10 @@
 - [x] キャラ画像: peaman-lp/chara.png と tomato-lp/chara.png を発見 → 白背景をフラッドフィルで透明化 → peaman.png / tomato.png として配置済み（ヘッダー・共感・プロフィール・最終CTA・フッターに反映）
 - [x] OGP/タイトル/ファビコン(🫑絵文字SVG)設定済み
 - [x] セルフチェック済み（自己採点9点）: モバイル375px横スクロールなし・全リンクOK・コンソールエラーなし・動画/duo画像は未生成でも非表示フォールバックで崩れない
-- [ ] 素材は「後日送る」とのこと（届いたらDLフォルダから探して配置→再デプロイ）:
-      hero-video.mp4（ヒーロー背景動画）/ hero-poster.jpg（ポスター兼OGP画像）/ duo-pc.jpg（ぴーまん×トマトPC画像）
-- [ ] デプロイ進行中（GitHub→Vercel）
+- [x] 素材すべて配置済み：hero-video.mp4（9.5MB→0.7MBに軽量化・DLのhf_*.mp4由来）/ hero-poster.jpg（動画1秒地点から切出し・OGP兼用）/ duo-pc.jpg（DLのChatGPT Image 23_32_03由来）
+- [x] 講師変更：プロフィールはトマト🍅（名前「トマト」）。ヘッダー/フッターはぴーまん野郎のまま
+- [x] ヒーロー：動画中央に光るぴーまんがいるため、900px以上は文字左寄せ＋動画object-position 78%に調整
+- [x] GitHub push済み（repo: shimadakume-netizen/peaman-yarou-lp）
+- [x] Vercel公開完了：https://peaman-yarou-lp.vercel.app （ユーザーがダッシュボードでImport済み・GitHub連携で以後pushだけで自動デプロイ）
+      ※Vercel CLIはアカウント表示名「たけし」(日本語)のバグで使用不可のまま。今後もデプロイはgit push経由で行うこと
 - 確認用サーバー: `python -m http.server 8778`（peaman-yarou-lp内で）→ http://localhost:8778
