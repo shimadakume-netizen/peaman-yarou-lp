@@ -27,6 +27,9 @@
 - note: https://note.com/pman1212
 - Threads: https://www.threads.com/@pmen.1212
 
+## アニメーション（ユーザー要望で全体追加済み）
+ヒーロー順次登場(fadeUp遅延)/金文字シマー(gold-gradは120degグラデ+背景アニメ)/金ボタン脈動glowPulse+シャインsweep/読み進みバー#progressBar/ヒーロー金粒子6個(rise)/reveal方向バリエ(r-left,r-scale)/診断の質問切替anim・結果popIn/価格30,000円カウントアップ(IntersectionObserver,静的フォールバックあり)/キャラhoverでwiggle。prefers-reduced-motionで全停止。
+
 ## つづきのメモ
 - [x] 制作方針の確認 → OK済み
 - [x] LP本体 index.html 作成完了（ヒーロー→共感→講座内容→強み→プロフィール→FAQ→CTA→フッター）
